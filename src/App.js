@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import data from "./dummy.js";
+import Table from "./components/Table";
+import Chart from "./components/Chart";
+import "./App.css";
 
-function App() {
+export default function App() {
+  const [showTable, setShowTable] = useState(true);
+
+  const toggleView = () => {
+    setShowTable(!showTable);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Tracker</h1>
+      <div className="toggle-container">
+        <button onClick={toggleView}>
+          {showTable ? "Show Chart" : "Show Table"}
+        </button>
+      </div>
+      {showTable ? <Table data={data} /> : <Chart data={data} />}
     </div>
   );
 }
-
-export default App;

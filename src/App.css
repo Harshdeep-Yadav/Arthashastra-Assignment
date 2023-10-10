@@ -1,38 +1,105 @@
+/* src/App.css */
+
 .App {
   text-align: center;
+  font-family: Arial, sans-serif;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  color: #333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+table {
+  width: 100%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 14px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+table,
+th,
+td {
+  border: 1px solid #ddd;
+}
+
+th,
+td {
+  padding: 10px;
+}
+
+th {
+  background-color: #007bff;
+  color: #fff;
+}
+
+td {
+  background-color: #f2f2f2;
+}
+
+.toggle-container {
+  margin: 20px 0;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* src/components/Chart.js */
+.chart-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin: 20px auto;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Add styles for the chart itself */
+/* You can customize these styles further based on your preferences */
+.LineChart {
+  max-width: 100%;
+  height: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.XAxis,
+.YAxis,
+.CartesianGrid,
+.Legend {
+  font-size: 12px;
+}
+
+.Tooltip {
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+
+
+/* Responsive Styles */
+
+@media (max-width: 768px) {
+  table {
+    font-size: 12px;
   }
-  to {
-    transform: rotate(360deg);
+
+  button {
+    padding: 8px 16px;
   }
 }
